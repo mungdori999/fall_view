@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #d8d3c9;
+  color: #352f2a;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+button, select, textarea { font: inherit; }
+button { cursor: pointer; }
