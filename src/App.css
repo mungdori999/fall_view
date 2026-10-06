@@ -602,6 +602,13 @@
   resize: none;
 }
 
+.message-length-guide {
+  margin: 6px 0 0;
+  color: #8c7868;
+  font-size: 11px;
+  text-align: right;
+}
+
 .letter-modal .sender-name-input {
   margin-top: 10px;
 }

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { sendMessage } from "./memberApi";
 
+const MAX_MESSAGE_LENGTH = 250;
+
 function LetterModal({ onClose, onSent, recipients, remainingMessageCount }) {
   const [receiverMemberId, setReceiverMemberId] = useState("");
   const [senderName, setSenderName] = useState("");
@@ -68,11 +70,14 @@ function LetterModal({ onClose, onSent, recipients, remainingMessageCount }) {
         />
         <textarea
           placeholder="부담 없이, 당신의 마음을 적어주세요."
-          maxLength="200"
+          maxLength={MAX_MESSAGE_LENGTH}
           value={content}
-          onChange={(event) => setContent(event.target.value)}
+          onChange={(event) => setContent(event.target.value.slice(0, MAX_MESSAGE_LENGTH))}
           disabled={isSending}
         />
+        <p className="message-length-guide" aria-live="polite">
+          {content.length} / {MAX_MESSAGE_LENGTH}자
+        </p>
         {error && <p className="letter-send-error" role="alert">{error}</p>}
         <button
           className="send"
